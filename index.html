@@ -30,44 +30,39 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="card m-5 bill">
-                        <div class="card m-4">
+                    <div class="card m-5 bg-dark bg-gradient">
+                        <div class="card m-4 bg-light bg-gradient">
                             <h1 class="text-center m-4">Tip Calculator</h1>
                             <hr>
                             <div class="card-body">
-                                <div class="row">
+                                <div class="row mb-3">
                                     <div class="col-4">
                                         <h1 class="text-center">Your Bill:</h1>
                                     </div>
-                                    <div class="col-8">
-                                        <input type="number" class="form-control" id="BillA" name="BillA" placeholder="000.00" aria-label="Amount (to the nearest dollar)">
+                                    <div class="col-4 btn-group">
+                                        <h1>$</h1><input type="number" class="form-control-lg" id="beforeTip" name="beforeTip" aria-label="Amount (to the nearest dollar)">
+                                    </div>
+                                    <div class="col-4 col-sm-2">
+                                        <h4 id="tipAmount"></h4>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4">
+                                        <h2 class="text-center">Add Tip:</h2>
+                                    </div>
+                                    <div class="col-4 btn-group">
+                                        <button class="btn btn-lg btn-primary" id="subtract">-</button>
+                                        <input type="text" class="text-center form-control-lg rounded-0 bg-white" id="percentage" readonly value="">
+                                        <button class="btn btn-lg btn-primary" id="add">+</button>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-4 d-flex justify-content-cente">
-                                        <div><h4 class="text-center">Add Tip</h4></div>
-                                        <div class="btn-group me-2" role="group" aria-label="First group">
-                                            <button type="button" id="five" class="btn btn-outline-secondary five" >5%</button>
-                                            <button type="button" id="ten" class="btn btn-outline-secondary ten" >10%</button>
-                                            <button type="button" class="btn btn-outline-secondary" id="fifteen" >15%</button>
-                                            <button type="button" class="btn btn-outline-secondary" id="twenty" >20%</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="input-group">
-                                            <label class="input-group-text" for="custom" id="btnGroupAddon">Custom $</label>
-                                            <input type="text" class="form-control" id="custom" placeholder="custom tip" aria-label="Input group example" aria-describedby="btnGroupAddon">
-                                        </div>
+                                    <div class="card-body d-flex justify-content-center flex-column align-items-center">
+                                        <label for="TipAmount">Total Amount:</label>
+                                        <h1 id="afterTip"></h1>
+                                        <button type="button" id="reset" class="btn btn-primary btn-lg">Reset</button>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="card-body">
-                                        <label for="TipAmount">Total  Amount: </label>
-                                        <input class="card-text Tip form-control" id="TipAmountValue" readonly />
-                                        <button type="button" class="btn btn-primary" onclick="Reset()">Reset</button>
-                                    </div>
-                                </div>
-                                
                             </div>
                         </div>
                     </div>

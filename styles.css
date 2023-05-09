@@ -5,6 +5,12 @@ body {
     height: 100vh;
 }
 
-.bill {
-    background-image: linear-gradient(rgb(41, 40, 40) 40%,rgba(61, 61, 61, 0),rgb(41, 40, 40) 60%) !important;
+input::-webkit-outer-spin-button, 
+input::-webkit-inner-spin-button {
+    display: none;
+}
+
+#reset {
+    width: 20vw;
+    margin: 0 auto;
 }
