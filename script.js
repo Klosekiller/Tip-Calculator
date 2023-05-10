@@ -1,51 +1,21 @@
-let yourBill = {
-    billBeforeTip: 0,
-    tipPercentage: 15,
-    tipAmount: 0,
-    billAfterTip: 0
-};
-
-function reset() {
-    yourBill.billBeforeTip = 0;
-    yourBill.tipPercentage = 15;
-    yourBill.tipAmount = 0;
-    yourBill.billAfterTip = 0;
-    document.getElementById("beforeTip").value = yourBill.billBeforeTip;
-    document.getElementById("percentage").value = `${yourBill.tipPercentage}%`;
-    document.getElementById("tipAmount").innerHTML = "";
-    document.getElementById("afterTip").innerHTML = `$${yourBill.billAfterTip}`;
-}
-
-reset();
-
-document.getElementById("beforeTip").addEventListener("change", () => {
-    let numberCheck = Number(document.getElementById("beforeTip").value)
-    yourBill.billBeforeTip = Number(document.getElementById("beforeTip").value);
-    document.getElementById("beforeTip").value = yourBill.billBeforeTip;
-    totalAmount();
+document.querySelectorAll(".addTip").forEach( function CalculateTip (button) {
+    button.addEventListener('click', () => {
+        let theValue = Number(button.value);
+        let theBill = Number(document.getElementById("bill").value);
+        let theTotal = (Number(theBill+(theBill*theValue))).toFixed(2);
+        document.getElementById("total").innerHTML = `$${theTotal}`;
+    })  
 });
-document.getElementById("add").addEventListener("click", () => {
-    yourBill.tipPercentage++;
-    document.getElementById("percentage").value = `${yourBill.tipPercentage}%`;
-    totalAmount();
-});
-document.getElementById("subtract").addEventListener("click", () => {
-    if (yourBill.tipPercentage < 1) {
-        document.getElementById("percentage").value = `${yourBill.tipPercentage}%`;
-        totalAmount();
-    } else {
-        yourBill.tipPercentage--;
-        document.getElementById("percentage").value = `${yourBill.tipPercentage}%`;
-        totalAmount();
-    }
-});
-function totalAmount() {
-    yourBill.tipAmount = (Number(Number(yourBill.billBeforeTip) * Number(yourBill.tipPercentage/100))).toFixed(2);
-    document.getElementById("tipAmount").innerHTML = `Tip Amount: $${yourBill.tipAmount}`;
-    yourBill.billAfterTip = (Number(yourBill.billBeforeTip) + Number(yourBill.tipAmount)).toFixed(2);
-    document.getElementById("afterTip").innerHTML = `$${yourBill.billAfterTip}`;
-};
 
-document.getElementById("reset").addEventListener("click", () => {
-    reset();
+document.getElementById("add").addEventListener("click", function CustomTip () {
+    let theBill = Number(document.getElementById("bill").value);
+    let theCustomTip = Number(document.getElementById("custom").value);
+    let theTotal = (Number(theBill+theCustomTip)).toFixed(2);
+    document.getElementById("total").innerHTML = `$${theTotal}`;
+});
+
+document.getElementById("reset").addEventListener("click", function Reset () {
+    document.getElementById("bill").value = 0;
+    document.getElementById("custom").value = 0;
+    document.getElementById("total").innerHTML = "$0.00"; 
 });

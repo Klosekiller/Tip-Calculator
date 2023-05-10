@@ -26,47 +26,44 @@
         </nav>
     </header>
     
-    <main>
-        <div class="container p-5">
-            <div class="card bg-dark bg-gradient">
-                <div class="inner card m-4 bg-light bg-gradient">
-                    <h1 class="text-center m-4">Tip Calculator</h1>
-                    <hr>
-                    <div class="card-body">
-                        <div class="row mb-3">
-                            <div class="col-4">
-                                <h1 class="text-center">Your Bill:</h1>
+    <main class="d-flex flex-column justify-content-center">
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-2 col-lg-3 col-xl-4"></div>
+            <div class="col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+                <div class="card bg-dark bg-gradient outer">
+                    <div class="card bg-light bg-gradient m-3 inner">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="card-title">Bill:</h4>
+                            <div class="btn-group">
+                                <h1>$</h1>
+                                <input type="number" class="form-control-lg" id="bill" name="bill" aria-label="Amount (to the nearest dollar)" value="0">
                             </div>
-                            <div class="col-4 btn-group">
-                                <h1>$</h1><input type="number" class="form-control-lg" id="beforeTip" name="beforeTip" aria-label="Amount (to the nearest dollar)">
+                            <br>
+                            <h4 class="card-title">Add Tip:</h4>
+                            <div>
+                                <button class="btn btn-lg btn-outline-dark addTip m-1" id="five" value="0.05">5%</button>
+                                <button class="btn btn-lg btn-outline-dark addTip m-1" id="ten" value="0.1">10%</button>
+                                <button class="btn btn-lg btn-outline-dark addTip m-1" id="fifteen" value="0.15">15%</button>
+                                <button class="btn btn-lg btn-outline-dark addTip m-1" id="twenty" value="0.2">20%</button>
                             </div>
-                            <div class="col-4 col-sm-2">
-                                <h4 id="tipAmount"></h4>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-4">
-                                <h2 class="text-center">Add Tip:</h2>
-                            </div>
-                            <div class="col-4 btn-group">
-                                <button class="btn btn-lg btn-primary" id="subtract">-</button>
-                                <input type="text" class="text-center form-control-lg rounded-0 bg-white" id="percentage" readonly value="">
-                                <button class="btn btn-lg btn-primary" id="add">+</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="card-body d-flex justify-content-center flex-column align-items-center">
-                                <label for="TipAmount">Total Amount:</label>
-                                <h1 id="afterTip"></h1>
-                                <button type="button" id="reset" class="btn btn-primary btn-lg">Reset</button>
+                            <br>
+                            <h5 class="card-title">Custom</h5>
+                            <div class="btn-group mb-2">
+                                <h1>$</h1>
+                                <input type="text" class="form-control-lg" id="custom" value="0">
+                                <button class="btn btn-lg btn-outline-dark m-1 rounded" id="add">add</button>
                             </div>
                         </div>
                     </div>
+                    <div class="card-body text-center text-white">
+                        <h3 class="card-title">Total Bill:</h3>
+                        <h1 id="total">$0.00</h1>
+                    </div>
                 </div>
             </div>
+            <div class="col-xs-1 col-sm-1 col-md-2 col-lg-3 col-xl-4"></div>
         </div>
     </main>
-
     <!--JS-->
     <script src="/Tip-Calculator/script.js"></script>
     <!--<script src="/script.js"></script>-->

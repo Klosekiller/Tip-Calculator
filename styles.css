@@ -5,12 +5,16 @@ body {
     height: 100vh;
 }
 
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    border-radius: 15px !important;
+}
+
 input::-webkit-outer-spin-button, 
 input::-webkit-inner-spin-button {
     display: none;
-}
-
-#reset {
-    width: 20vw;
-    margin: 0 auto;
 }
