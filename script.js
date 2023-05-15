@@ -17,3 +17,6 @@ document.getElementById("reset").addEventListener("click", function Reset () {
     document.getElementById("custom").value = 0;
     document.getElementById("total").innerHTML = "$0.00"; 
 });
+document.querySelectorAll("input").addEventListener("click", () =>{
+    this.value = "";
+})
