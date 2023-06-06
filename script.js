@@ -20,5 +20,5 @@ document.getElementById("reset").addEventListener("click", function Reset () {
 document.querySelectorAll("input").forEach( (selected) => {
     selected.addEventListener('click', () => {
         selected.value = "";
-    })
+    });
 });
